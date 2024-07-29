@@ -1,4 +1,4 @@
-# PHP with vite
+# PHP with vite/React
 This is a register form I created with PHP to handle the DB connection and vite/React for the client side.
 
 ## Backend
