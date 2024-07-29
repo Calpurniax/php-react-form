@@ -1,0 +1,155 @@
+@import '../core/responsive.scss';
+@import '../core/mixin.scss';
+
+.form {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+
+  @include desktop {
+    color: black;
+    justify-content: flex-start;
+    width: 50vw;
+  }
+
+  &__img {
+    display: none;
+
+    @include desktop {
+      display: block;
+      justify-self: flex-end;
+    }
+  }
+
+  &__wrap {
+    padding: 0 $padding-mobile 0 $padding-mobile;
+    width: 90%;
+    height: 90%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(./assets/img-formulario.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    @include desktop {
+      width: 50vw;
+      height: auto;
+      background-image: none;
+      margin-left: $margin-desktop;
+    }
+  }
+
+  &__text {
+    margin-bottom: $margin-mobile;
+    text-transform: uppercase;
+
+    @include desktop {
+      margin-bottom: $margin-desktop;
+    }
+
+    p, h2 {
+      margin-bottom: $margin-mobile;
+      font-family: $titles_font;
+
+      @include desktop {
+        font-size: 2em;
+      }
+    }
+
+    span {
+      font-weight: bold;
+    }
+
+    &--title {
+      font-style: italic;
+      font-size: 1.5em;
+    }
+  }
+
+  &__input {
+    border: 0;
+    @include input_small;
+    outline: 0;
+    padding: $padding-mobile 0 0.3em 0;
+    background: transparent;
+
+    @include desktop {
+      @include input_large;
+      padding: $padding-desktop 0 1em 0;
+      width: 100%;
+    }
+
+    &::placeholder {
+      color: white;
+
+      @include desktop {
+        color: black;
+      }
+    }
+
+    &--wrap {
+      @include desktop {
+        width: 30vw;
+      }
+    }
+  }
+
+  &__error {
+    font-size: 0.7em;
+  }
+
+  &__submitContainer {
+    margin-top: $margin-mobile;
+    display: flex;
+    flex-direction: column;
+    gap: $padding-mobile;
+  }
+
+  &__submit {
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    transition: 0.2s linear;
+    padding: $padding-mobile;
+
+    @include desktop {
+      font-size: 1.1em;
+    }
+
+    &:hover {
+      background-color: white;
+      color: black;
+      font-weight: bold;
+
+      @include desktop {
+        border: 1px solid black;
+      }
+    }
+  }
+
+  &__checkbox {
+    font-size: 0.7em;
+
+    &--wrap {
+      display: grid;
+      grid-template-columns: 1em 1fr;
+      grid-template-rows: 1fr;
+      align-items: center;
+      font-family: $main_font;
+      width: 100%;
+    }
+  }
+}
+
+:disabled {
+  background-color: grey;
+}

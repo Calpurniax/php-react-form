@@ -1,0 +1,13 @@
+@mixin form_small{
+    color:white;
+    
+}
+@mixin input_small{
+    border-bottom: 1px solid white;
+    color:white;
+}
+
+@mixin input_large{
+    border-bottom: 1px solid black;
+    color:black;
+}
